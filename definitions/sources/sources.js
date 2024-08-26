@@ -4,9 +4,12 @@ const sourceConfigs = [
         schemas: [{
             schema: "demo_bronze",
             tables: [
-                "payments"
+                "payments",
+                "clients"
             ]
-        }]
+            },
+
+        ]
     }
 ];
 

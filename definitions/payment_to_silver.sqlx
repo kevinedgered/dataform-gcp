@@ -1,14 +1,17 @@
 config { 
     type: "table" ,
     schema: "demo_silver",
-    name: "payments_silver_kevin"
+    name: "joined_silver_kevin"
 }
 -- declare sourceTableName STRING DEFAULT 'payments';
 
-select transaction_id
-    , contract_id
-    , client_id
+select p.transaction_id
+    , p.contract_id
+    , p.client_id
     ,  TIMESTAMP_SECONDS(transaction_date) as transaction_date
-    , payment_amt
-    , payment_code
-from ${ref('payments')}
+    , p.payment_amt
+    , p.payment_code
+    , c.entity_type
+    -- , c.entity_year_establish
+from ${ref('payments')} p
+Left Join ${ref('clients')} c on p.client_id = c.client_id
