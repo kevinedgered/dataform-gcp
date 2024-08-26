@@ -1,0 +1,13 @@
+config { 
+    type: "view" ,
+    schema: "demo_silver",
+    name: "payments_silver_kevin"
+}
+
+select transaction_id
+    , contract_id
+    , client_id
+    ,  TIMESTAMP_SECONDS(transaction_date) as transaction_date
+    , payment_amt
+    , payment_code
+from edgered-lab.demo_bronze.payments
