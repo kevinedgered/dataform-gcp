@@ -1,0 +1,12 @@
+config { 
+    type: "table" ,
+    schema: "demo_silver",
+    name: "clients_silver_kevin",
+    assertions: {
+        nonNull: [ "client_id" ]
+    }
+}
+
+
+select *
+from ${ref('clients')} 

@@ -1,0 +1,9 @@
+config { 
+    type: "table" ,
+    schema: "demo_silver",
+    name: "payments_silver_kevin"
+}
+
+
+select *
+from ${ref('payments')} 
