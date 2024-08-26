@@ -1,5 +1,5 @@
 config { 
-    type: "view" ,
+    type: "table" ,
     schema: "demo_silver",
     name: "payments_silver_kevin"
 }
