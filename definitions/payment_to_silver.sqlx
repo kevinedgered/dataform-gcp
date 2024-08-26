@@ -3,6 +3,7 @@ config {
     schema: "demo_silver",
     name: "payments_silver_kevin"
 }
+-- declare sourceTableName STRING DEFAULT 'payments';
 
 select transaction_id
     , contract_id
@@ -10,4 +11,4 @@ select transaction_id
     ,  TIMESTAMP_SECONDS(transaction_date) as transaction_date
     , payment_amt
     , payment_code
-from edgered-lab.demo_bronze.payments
+from ${ref('payments')}
