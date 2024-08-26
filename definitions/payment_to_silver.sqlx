@@ -1,7 +1,10 @@
 config { 
     type: "table" ,
     schema: "demo_silver",
-    name: "joined_silver_kevin"
+    name: "joined_silver_kevin",
+    assertions: {
+        nonNull: [ "client_id" ]
+    }
 }
 -- declare sourceTableName STRING DEFAULT 'payments';
 

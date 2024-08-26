@@ -1,7 +1,10 @@
 config { 
     type: "table" ,
     schema: "demo_silver",
-    name: "payments_silver_kevin"
+    name: "payments_silver_kevin",
+    assertions: {
+        nonNull: [ "client_id" ]
+    }
 }
 
 
