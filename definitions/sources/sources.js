@@ -6,8 +6,8 @@ const sourceConfigs = [
             tables: [
                 "payments",
                 "clients"
-            ]
-            },
+             ]
+            }
 
         ]
     }

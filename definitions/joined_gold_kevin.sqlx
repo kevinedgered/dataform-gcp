@@ -1,0 +1,16 @@
+config { 
+    type: "table" ,
+    schema: "demo_gold",
+    name: "joined_gold_kevin",
+    assertions: {
+        uniqueKey: ["client_id"]
+    },
+    dependencies: [`demo_silver_joined_silver_kevin_assertions_uniqueKey_0`, 
+    `demo_silver_joined_silver_kevin_assertions_rowConditions`]
+        
+    
+}
+
+
+select *
+from ${ref(`joined_silver_kevin`)}
