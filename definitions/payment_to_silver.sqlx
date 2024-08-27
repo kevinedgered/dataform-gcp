@@ -14,7 +14,7 @@ select p.transaction_id
     ,  TIMESTAMP_SECONDS(transaction_date) as transaction_date
     , p.payment_amt
     , p.payment_code
-    , c.entity_type
+    , c.entity_type ---- Nathan note
     -- , c.entity_year_establish
 from ${ref('payments')} p
 Left Join ${ref('clients')} c on p.client_id = c.client_id
