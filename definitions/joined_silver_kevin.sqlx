@@ -7,7 +7,6 @@ config {
         uniqueKey: ["client_id"]
     }
 }
--- declare sourceTableName STRING DEFAULT 'payments';
 
 select p.transaction_id
     , p.contract_id
@@ -16,6 +15,6 @@ select p.transaction_id
     , p.payment_amt
     , p.payment_code
     , c.entity_type
-    -- , c.entity_year_establish
+
 from ${ref('payments')} p
 Left Join ${ref('clients')} c on p.client_id = c.client_id
