@@ -12,7 +12,7 @@ config {
 select p.transaction_id
     , p.contract_id
     , p.client_id
-    ,  TIMESTAMP_SECONDS(transaction_date) as transaction_date
+    , TIMESTAMP_SECONDS(transaction_date) as transaction_date
     , p.payment_amt
     , p.payment_code
     , c.entity_type
